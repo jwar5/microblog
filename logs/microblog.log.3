@@ -1,4 +1,4 @@
-2019-12-04 02:28:10,025 ERROR: Exception on /explore [GET] [in /home/jwar/.local/lib/python3.6/site-packages/flask/app.py:1891]
+2019-12-04 02:28:22,472 ERROR: Exception on /explore [GET] [in /home/jwar/.local/lib/python3.6/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/home/jwar/.local/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -57,7 +57,7 @@ Traceback (most recent call last):
   File "/home/jwar/.local/lib/python3.6/site-packages/jinja2/parser.py", line 59, in fail
     raise exc(msg, lineno, self.name, self.filename)
 jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endif'. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
-2019-12-04 02:28:11,285 ERROR: Exception on /explore [GET] [in /home/jwar/.local/lib/python3.6/site-packages/flask/app.py:1891]
+2019-12-04 02:28:35,595 ERROR: Exception on /index [GET] [in /home/jwar/.local/lib/python3.6/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/home/jwar/.local/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -73,8 +73,8 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/jwar/.local/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/home/jwar/microblog/app/routes.py", line 126, in explore
-    return render_template('index.html', title='Explore', posts=posts)
+  File "/home/jwar/microblog/app/routes.py", line 22, in index
+    posts=posts)
   File "/home/jwar/.local/lib/python3.6/site-packages/flask/templating.py", line 138, in render_template
     ctx.app.jinja_env.get_or_select_template(template_name_or_list),
   File "/home/jwar/.local/lib/python3.6/site-packages/jinja2/environment.py", line 869, in get_or_select_template
@@ -116,3 +116,4 @@ Traceback (most recent call last):
   File "/home/jwar/.local/lib/python3.6/site-packages/jinja2/parser.py", line 59, in fail
     raise exc(msg, lineno, self.name, self.filename)
 jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endif'. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2019-12-04 02:30:56,793 INFO: Microblog startup [in /home/jwar/microblog/app/__init__.py:43]
