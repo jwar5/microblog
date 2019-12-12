@@ -1,4 +1,4 @@
-2019-12-04 18:43:47,899 ERROR: Exception on /reset_password_request [GET] [in /home/jwar/.local/lib/python3.6/site-packages/flask/app.py:1891]
+2019-12-04 18:55:59,436 ERROR: Exception on /reset_password_request [GET] [in /home/jwar/.local/lib/python3.6/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/home/jwar/.local/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -35,8 +35,7 @@ Traceback (most recent call last):
   File "/home/jwar/.local/lib/python3.6/site-packages/jinja2/environment.py", line 430, in getattr
     return getattr(obj, attribute)
 jinja2.exceptions.UndefinedError: 'app.forms.ResetPasswordRequestForm object' has no attribute 'password'
-2019-12-04 18:44:20,280 INFO: Microblog startup [in /home/jwar/micro/microblog/app/__init__.py:45]
-2019-12-04 18:44:23,238 ERROR: Exception on /reset_password_request [GET] [in /home/jwar/.local/lib/python3.6/site-packages/flask/app.py:1891]
+2019-12-04 18:56:00,410 ERROR: Exception on /reset_password_request [GET] [in /home/jwar/.local/lib/python3.6/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/home/jwar/.local/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -73,8 +72,11 @@ Traceback (most recent call last):
   File "/home/jwar/.local/lib/python3.6/site-packages/jinja2/environment.py", line 430, in getattr
     return getattr(obj, attribute)
 jinja2.exceptions.UndefinedError: 'app.forms.ResetPasswordRequestForm object' has no attribute 'password'
-2019-12-04 18:49:17,466 INFO: Microblog startup [in /home/jwar/micro/microblog/app/__init__.py:45]
-2019-12-04 18:49:23,381 ERROR: Exception on /reset_password_request [GET] [in /home/jwar/.local/lib/python3.6/site-packages/flask/app.py:1891]
+2019-12-04 19:04:39,173 INFO: Microblog startup [in /home/jwar/micro/microblog/app/__init__.py:45]
+2019-12-04 19:18:12,206 INFO: Microblog startup [in /home/jwar/micro/microblog/app/__init__.py:47]
+2019-12-04 19:23:58,616 INFO: Microblog startup [in /home/jwar/micro/microblog/app/__init__.py:47]
+2019-12-12 15:10:28,713 INFO: Microblog startup [in /home/jwar/micro/microblog/app/__init__.py:49]
+2019-12-12 15:10:35,171 ERROR: Exception on /index [GET] [in /home/jwar/.local/lib/python3.6/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/home/jwar/.local/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -88,8 +90,10 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/jwar/.local/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/jwar/micro/microblog/app/routes.py", line 92, in reset_password_request
-    title='Reset Password', form=form)
+  File "/home/jwar/.local/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/jwar/micro/microblog/app/routes.py", line 39, in index
+    prev_url=prev_url)
   File "/home/jwar/.local/lib/python3.6/site-packages/flask/templating.py", line 140, in render_template
     ctx.app,
   File "/home/jwar/.local/lib/python3.6/site-packages/flask/templating.py", line 120, in _render
@@ -102,13 +106,30 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "/home/jwar/.local/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "/home/jwar/micro/microblog/app/templates/reset_password_request.html", line 1, in top-level template code
+  File "/home/jwar/micro/microblog/app/templates/index.html", line 1, in top-level template code
     {% extends "base.html" %}
-  File "/home/jwar/micro/microblog/app/templates/base.html", line 31, in top-level template code
-    {% block content %}{% endblock %}
-  File "/home/jwar/micro/microblog/app/templates/reset_password_request.html", line 8, in block "content"
-    {{ form.password.label }}<br>
-  File "/home/jwar/.local/lib/python3.6/site-packages/jinja2/environment.py", line 430, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'app.forms.ResetPasswordRequestForm object' has no attribute 'password'
-2019-12-04 18:55:54,606 INFO: Microblog startup [in /home/jwar/micro/microblog/app/__init__.py:45]
+  File "/home/jwar/.local/lib/python3.6/site-packages/flask/templating.py", line 60, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/jwar/.local/lib/python3.6/site-packages/flask/templating.py", line 86, in _get_source_fast
+    return loader.get_source(environment, template)
+  File "/home/jwar/.local/lib/python3.6/site-packages/jinja2/loaders.py", line 171, in get_source
+    f = open_if_exists(filename)
+  File "/home/jwar/.local/lib/python3.6/site-packages/jinja2/utils.py", line 154, in open_if_exists
+    return open(filename, mode)
+PermissionError: [Errno 13] Permission denied: '/home/jwar/micro/microblog/app/templates/base.html'
+2019-12-12 15:12:22,361 INFO: Microblog startup [in /home/jwar/micro/microblog/app/__init__.py:49]
+2019-12-12 15:15:47,332 INFO: Microblog startup [in /home/jwar/micro/microblog/app/__init__.py:49]
+2019-12-12 15:16:22,566 INFO: Microblog startup [in /home/jwar/micro/microblog/app/__init__.py:49]
+2019-12-12 15:17:01,345 INFO: Microblog startup [in /home/jwar/micro/microblog/app/__init__.py:49]
+2019-12-12 15:21:34,952 INFO: Microblog startup [in /home/jwar/micro/microblog/app/__init__.py:49]
+2019-12-12 15:24:34,414 INFO: Microblog startup [in /home/jwar/micro/microblog/app/__init__.py:49]
+2019-12-12 15:25:23,386 INFO: Microblog startup [in /home/jwar/micro/microblog/app/__init__.py:49]
+2019-12-12 15:26:25,704 INFO: Microblog startup [in /home/jwar/micro/microblog/app/__init__.py:49]
+2019-12-12 15:28:12,762 INFO: Microblog startup [in /home/jwar/micro/microblog/app/__init__.py:49]
+2019-12-12 15:29:29,126 INFO: Microblog startup [in /home/jwar/micro/microblog/app/__init__.py:49]
+2019-12-12 15:32:02,560 INFO: Microblog startup [in /home/jwar/micro/microblog/app/__init__.py:49]
+2019-12-12 15:34:03,161 INFO: Microblog startup [in /home/jwar/micro/microblog/app/__init__.py:49]
+2019-12-12 15:40:24,235 INFO: Microblog startup [in /home/jwar/micro/microblog/app/__init__.py:49]
+2019-12-12 15:41:30,937 INFO: Microblog startup [in /home/jwar/micro/microblog/app/__init__.py:49]
+2019-12-12 15:41:47,932 INFO: Microblog startup [in /home/jwar/micro/microblog/app/__init__.py:49]
+2019-12-12 15:42:22,364 INFO: Microblog startup [in /home/jwar/micro/microblog/app/__init__.py:49]
