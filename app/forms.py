@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField, \
-    TextAreaField
+    TextAreaField, SelectField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, \
     Length
 from app.models import User
@@ -47,6 +47,16 @@ class ResetPasswordForm(FlaskForm):
 class EditProfileForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
     about_me = TextAreaField('About me', validators=[Length(min=0, max=140)])
+    color=SelectField('Color',choices=[('255,0,0','Red'),
+                                        ('255, 165, 0','Orange'),
+                                        ('255,255,0','Yellow'),
+                                        ('0,128,0','Green'),
+                                        ('0,0,255','Blue'),
+                                        ('75,0,130','Indigo'),
+                                        ('106,13,173','Violet'),
+                                        ('255,192,203','Pink'),
+                                        ('128,128,128','Gray'),
+                                        ('255,255,255','None')])
     submit = SubmitField('Submit')
 
     def __init__(self, original_username, *args, **kwargs):

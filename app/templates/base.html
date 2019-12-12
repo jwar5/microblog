@@ -4,6 +4,13 @@
     {% if title %}{{ title }} - Microblog{% else %}Welcome to Microblog{% endif %}
 {% endblock %}
 
+{% block styles %}
+<link href="{{bootstrap_find_resource('css/bootstrap.css', cdn='bootstrap')}}" rel="stylesheet">
+<style type="text/css">
+body { background: rgba({{ current_user.color }},.5) !important; }
+</style>
+{% endblock %}
+
 {% block navbar %}
     <nav class="navbar navbar-default">
         <div class="container">
